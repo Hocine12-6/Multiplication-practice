@@ -339,17 +339,22 @@ def main():
            for_change_y=update_limits("y",start_y,limit_y,True)
            start_x,limit_x  =  for_change_x
            start_y,limit_y  =  for_change_y
-           
+       
        #elif an other external addition ..... 
-       
-       
+       else:
+           print("For the external entrance:")
+           draw_divider_line("blue",90,"",False)
+           print(Color.GOLD+Color.INVERT+"Your external input is incorrect.")
+           print()
+           print("Please use info  to view the available options."+Color.END)#مستقبلا يعدل ليعرض استخدامات خارجية قريبة من المدخل الخاطئ 
+           draw_divider_line("blue",90,"",False)
     draw_divider_line("ashen",99,"equal",False)
     print(f"{Color.BLUE+Color.INVERT}Nice to meet you maestro{Color.END}")
     show_limits(start_x,start_y,limit_x,limit_y)
     while True:
         #_____ما يخص العملية 
-        y_number = random.randint(start_x, limit_x)
-        x_number = random.randint(start_y, limit_y)
+        x_number = random.randint(start_x, limit_x)
+        y_number = random.randint(start_y, limit_y)
         if ( _for_smartRepitition["success_counter"]== 3 
          and len(_for_smartRepitition["errors_for_ripitition"])>=1 ):
             x_number,y_number = smart_repitition()
@@ -440,5 +445,3 @@ except KeyboardInterrupt:
         time.sleep(7)
         exiting_animation()
         exit()
- 
- 
